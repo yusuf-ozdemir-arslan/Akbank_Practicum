@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="oddOrEven"></h1>
+
+
+    <script>
+
+        function oddishOrEvenish() {
+
+            var data = prompt("Kindly enter a positive integer value");
+
+            let result = 0;
+            let digit;
+            let number = parseInt(data);
+            let numberString = number.toString();
+
+
+            if (number > 0) {
+
+                for (let a = 0; a < numberString.length; a++) {
+                    digit = number % 10
+                    result = result + digit;
+                    number = Math.floor(number / 10);
+
+                }
+
+                if (result % 2 == 0) {
+                    document.getElementById('oddOrEven').innerHTML = "Thats EVEN";
+
+                } else {
+                    document.getElementById('oddOrEven').innerHTML = "Thats ODD";
+                }
+            } else {
+                alert("Thats not a positive integer");
+                oddishOrEvenish();
+            }
+
+        }
+
+        oddishOrEvenish();
+
+    </script>
+</body>
+</html>
